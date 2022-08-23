@@ -2,6 +2,7 @@
 
 .titulo{
   background-color: aquamarine;
+  border-bottom: solid black 1px;
   display: flex;
   justify-content: center;
   font-size: 30px;
@@ -12,4 +13,9 @@
     display: flex;
     justify-content: space-around;
     font-size: 20px;
+}
+
+.saludo{
+  background-color: rgb(134, 247, 247);
+  border-radius: 10px;
 }
