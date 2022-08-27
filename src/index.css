@@ -19,3 +19,23 @@
   background-color: rgb(134, 247, 247);
   border-radius: 10px;
 }
+
+.carrito{
+  display: flexbox;
+  flex-direction: column;
+
+}
+
+.btn-suma-resta{
+  background-color: rgb(73, 103, 255);
+  color: white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  border: none;
+  margin-right: 5px;
+}
+
+
+
+
+

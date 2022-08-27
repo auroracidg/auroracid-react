@@ -1,19 +1,24 @@
-const Main = ({test, fecha, nombre}) => {
 
-  
+
+const Main = ({test, fecha, saludar, saludo}) => {
+
 
     return(
         <main className="contenedor-main">
+
           <section>
-            <h2>Bienvenidos {test} </h2>
-            <p> hoy es {fecha} de agosto</p>
+              <h2 onClick={saludar}>Bienvenidos {test} </h2>
+              <p> hoy es {fecha} de agosto</p>
+              <p>{saludo}</p>
+          
+            
             
             
           </section>
-         </main>
+        </main>
 
 
-    )
-}
+    );
+};
 
 export default Main;

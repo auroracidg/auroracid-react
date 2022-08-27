@@ -1,9 +1,10 @@
+import Button from "../Button/Button"
 import CartWidget from "../CartWidget/CartWidget"
 
 const NavBar = () =>{
  return(
     <nav>
-        <h1 className="titulo">Bienvenios a Dolce Vita</h1>
+        <h1 className="titulo">Bienvenidos a Dolce Vita</h1>
                 <ul className="navbar">
                     <li>
                          <a href="INICIO">INICIO</a>
@@ -17,7 +18,11 @@ const NavBar = () =>{
                     <li>
                         <CartWidget/>
                     </li>
+
+                    
                 </ul>
+
+                
             </nav>
  )
 
