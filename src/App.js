@@ -19,6 +19,10 @@ const App = () => {
 
   }
 
+  const onAdd = () => {
+    console.log('agregando')
+  }
+
   
   
   return(
@@ -28,7 +32,7 @@ const App = () => {
 
       <Header/>
       <Main test="A la tienda de perritos mas cool" fecha= {22} saludo= "saludo" saludar={saludar} />
-      <ItemCount/>
+      <ItemCount stock={15} inicial={0} onAdd={onAdd}/>
       
 
     </>
