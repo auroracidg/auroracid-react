@@ -1,8 +1,37 @@
+import product from '../mock/product';
+import React, {useState, useEffect} from 'react';
+import ItemList from '../ItemList/ItemList';
+
+
+
 const ItemListContainer = (props) =>{
 
-    console.log(props.prueba)
+    const [listaProductos, setLista] = useState([])
+
+    useEffect(()=> { 
+
+        const mock = new Promise((resolve, reject) => { 
+            setTimeout(() =>{
+                resolve(product);
+            }, 3000);      
+        })
+
+
+        mock
+        .then((resultado) => {
+            setLista(resultado)  
+        })
+
+
+    }, [])
+
+    console.log(listaProductos)
+
     return(
-        <h1 className="saludo">SAlUDOS {props.prueba}</h1>
+        <>
+            <h1 className="saludo">SAlUDOS {props.prueba}</h1>
+            <ItemList listaProductos={listaProductos}/>
+        </>
     )
 }
 

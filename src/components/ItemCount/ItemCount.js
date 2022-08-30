@@ -1,13 +1,14 @@
 import React, {useState} from 'react'
 
-const ItemCount = (props) => {
+
+const ItemCount = ({stock, inicial, onAdd}) => {
     const [conteo, setConteo] = useState(0) 
 
    
 
     const sumar = () => {
-        console.log(props.stock)
-        if (conteo < props.stock) {
+        console.log(stock)
+        if (conteo < stock) {
             setConteo(conteo + 1)
         } else {
             alert('No hay mas stock disponible')
@@ -16,9 +17,9 @@ const ItemCount = (props) => {
     }
 
     const restar = ()=> {
-        console.log(props.inicial)
+        console.log(inicial)
         
-        if (conteo === props.inicial){
+        if (conteo === inicial){
             console.log('0 Es el minimo disponible')   
         } else{
             setConteo(conteo - 1)
@@ -32,7 +33,7 @@ const ItemCount = (props) => {
                 <button className='btn-suma-resta' onClick={sumar}>+</button>
                 <button className='btn-suma-resta' onClick={restar}>-</button>
             </div>
-            <button className='btn-carrito' onClick={props.onAdd}>Agregar al carrito</button>
+            <button className='btn-carrito' onClick={onAdd}>Agregar al carrito</button>
             <p>count: {conteo}</p>
         </div>
     )
