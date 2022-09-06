@@ -5,7 +5,7 @@ import ItemList from '../ItemList/ItemList';
 
 
 const ItemListContainer = (props) =>{
-
+ 
     const [listaProductos, setLista] = useState([])
 
     useEffect(()=> { 
@@ -16,16 +16,11 @@ const ItemListContainer = (props) =>{
             }, 3000);      
         })
 
-
         mock
         .then((resultado) => {
-            setLista(resultado)  
+            setLista(resultado) 
         })
-
-
     }, [])
-
-    console.log(listaProductos)
 
     return(
         <>

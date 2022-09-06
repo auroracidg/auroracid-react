@@ -3,6 +3,8 @@ import Header from './components/Header/Header'
 import Main from './components/Main/Main';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemCount from './components/ItemCount/ItemCount'
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
+import ItemDetail from './components/ItemDetail/ItemDetail'
 
 
 
@@ -33,8 +35,7 @@ const App = () => {
       <Header/>
       <Main test="A la tienda de perritos mas cool" fecha= {22} saludo= "saludo" saludar={saludar} />
       <ItemCount stock={15} inicial={0} onAdd={onAdd}/>
-      
-
+      <ItemDetailContainer/>
     </>
     
     
