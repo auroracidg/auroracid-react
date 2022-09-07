@@ -1,13 +1,19 @@
 import product from '../mock/product';
 import React, {useState, useEffect} from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
+import { useParams } from 'react-router-dom'; 
 
 const ItemDetailContainer = () =>{
     const [item, setItem] = useState({})
 
+
+    console.log(useParams());
+
+    const idItem = useParams().id;
+
     useEffect(()=> {
         const promesa_product = new Promise((resolve, reject) => { 
-            const p = product.find(product => product.id === 2)
+            const p = product.find(product => product.id === parseInt(idItem))
 
             setTimeout(() =>{
                 resolve(p);

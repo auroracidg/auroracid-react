@@ -1,25 +1,27 @@
-import Button from "../Button/Button"
+
 import CartWidget from "../CartWidget/CartWidget"
+import { Link } from "react-router-dom"
 
 const NavBar = () =>{
  return(
     <nav>
         <h1 className="titulo">Bienvenidos a Dolce Vita</h1>
-                <ul className="navbar">
-                    <li>
-                         <a href="INICIO">INICIO</a>
-                    </li>
-                    <li>
-                         <a href="CONTACTO">CONTACTO</a>
-                    </li>
-                    <li>
-                        <a href="QUIENES SOMOS">QUIENES SOMOS</a>
-                    </li>
-                    <li>
-                        <CartWidget/>
-                    </li>
 
+        
+
+            <Link to='/'>
+                <img  alt="hola" src="https://uvn-brightspot.s3.amazonaws.com/assets/vixes/imj/hogartotal/M/Mascotas-en-casa-cual-elegir-segun-el-espacio-1.jpg" width="500" height="600"/>
+            </Link>
+
+                <ul className="navbar">
                     
+                    <Link to="/category/ropa">Accesorios</Link>   
+
+                    <Link to="/category/comida">Alimento</Link>  
+
+                    <Link to="/category/productos">Productos de Limpieza</Link>  
+                    
+                    <CartWidget/>    
                 </ul>
 
                 
