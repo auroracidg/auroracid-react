@@ -10,7 +10,7 @@ const NavBar = () =>{
         
 
             <Link to='/'>
-                <img  alt="hola" src="https://uvn-brightspot.s3.amazonaws.com/assets/vixes/imj/hogartotal/M/Mascotas-en-casa-cual-elegir-segun-el-espacio-1.jpg" width="500" height="600"/>
+                <img   alt="hola" src="https://uvn-brightspot.s3.amazonaws.com/assets/vixes/imj/hogartotal/M/Mascotas-en-casa-cual-elegir-segun-el-espacio-1.jpg" width="150" height="150"/>
             </Link>
 
                 <ul className="navbar">

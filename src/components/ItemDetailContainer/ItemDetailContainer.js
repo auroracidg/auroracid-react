@@ -17,7 +17,7 @@ const ItemDetailContainer = () =>{
 
             setTimeout(() =>{
                 resolve(p);
-            }, 1500);      
+            }, 500);      
         })
 
         promesa_product

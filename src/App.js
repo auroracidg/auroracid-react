@@ -6,17 +6,18 @@ import ItemCount from './components/ItemCount/ItemCount'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import ItemDetail from './components/ItemDetail/ItemDetail'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Cart from './components/Cart/Cart';
 
 
 
 
 const App = () => {
 
-  const saludo = 'bienvenidos'
+ 
 
   const saludar = () =>{
 
-    console.log('holi')
+    
 
 
 
@@ -55,6 +56,11 @@ const App = () => {
             <Route
             path='/item/:id'
             element={<ItemDetailContainer/>}/>
+
+            <Route
+            path='/cart'
+            element={<Cart/>} />
+    
             
            
       </Routes>

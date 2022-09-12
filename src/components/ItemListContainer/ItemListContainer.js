@@ -22,7 +22,7 @@ const ItemListContainer = (props) =>{
                 else{
                     resolve(product);
                 }
-            }, 3000);      
+            }, 1000);      
         })
 
         mock
