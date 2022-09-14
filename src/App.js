@@ -4,69 +4,60 @@ import Main from './components/Main/Main';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemCount from './components/ItemCount/ItemCount'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
-import ItemDetail from './components/ItemDetail/ItemDetail'
+
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Cart from './components/Cart/Cart';
+import { createContext } from 'react';
+import {CartProvider} from './context/CartContext'
 
+
+
+export const PruebaContext = createContext();
 
 
 
 const App = () => {
+    const saludar = () =>{
+    }
 
- 
+    const onAdd = () => {
+      console.log('agregando')
+    }
 
-  const saludar = () =>{
-
-    
-
-
-
-  }
-
-  const onAdd = () => {
-    console.log('agregando')
-  }
-
-  
-  
   return(
-    <BrowserRouter>
-      
-      <Navbar/>
-      <Routes>
-            <Route 
-              path='/' 
-              element={<ItemListContainer prueba= 'Coordiales de DOLCE VITA' />}/>
+    <CartProvider>
+      <BrowserRouter>
+        <Navbar/>
+        <Routes>
+              <Route 
+                path='/' 
+                element={<ItemListContainer prueba= 'Coordiales de DOLCE VITA' />}/>
 
-            <Route 
-              path='/category/:categoryName' 
-              element={<ItemListContainer prueba= 'Coordiales de DOLCE VITA' />}/>
-            <Route
-            path='/main'
-            element={<Main test="A la tienda de perritos mas cool" fecha= {22} saludo= "saludo" saludar={saludar} />}/>
+              <Route 
+                path='/category/:categoryName' 
+                element={<ItemListContainer prueba= 'Coordiales de DOLCE VITA' />}/>
+              <Route
+              path='/main'
+              element={<Main test="A la tienda de perritos mas cool" fecha= {22} saludo= "saludo" saludar={saludar} />}/>
 
-            <Route
-            path='/header'
-            element={<Header/>}/>
+              <Route
+              path='/header'
+              element={<Header/>}/>
 
-            <Route
-            path='/count'
-            element={<ItemCount stock={15} inicial={0} onAdd={onAdd}/>}/>
+              <Route
+              path='/count'
+              element={<ItemCount stock={15} inicial={0} onAdd={onAdd}/>}/>
 
-            <Route
-            path='/item/:id'
-            element={<ItemDetailContainer/>}/>
+              <Route
+              path='/item/:id'
+              element={<ItemDetailContainer/>}/>
 
-            <Route
-            path='/cart'
-            element={<Cart/>} />
-    
-            
-           
-      </Routes>
-    </BrowserRouter>
-    
-    
+              <Route
+              path='/cart'
+              element={<Cart/>} />
+        </Routes>
+      </BrowserRouter>
+    </CartProvider>
   )
 
 

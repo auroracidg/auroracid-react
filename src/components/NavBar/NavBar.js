@@ -2,7 +2,12 @@
 import CartWidget from "../CartWidget/CartWidget"
 import { Link } from "react-router-dom"
 
+
+
+
 const NavBar = () =>{
+
+    
  return(
     <nav>
         <h1 className="titulo">Bienvenidos a Dolce Vita</h1>
