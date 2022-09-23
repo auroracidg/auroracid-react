@@ -26,7 +26,7 @@ const Form = () =>{
 
         useEffect(() =>{
             const edad = document.getElementById('edad')
-                console.log(edad)
+                
         })
 
         

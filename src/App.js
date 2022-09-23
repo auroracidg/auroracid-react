@@ -21,7 +21,7 @@ const App = () => {
     }
 
     const onAdd = () => {
-      console.log('agregando')
+      
     }
 
   return(

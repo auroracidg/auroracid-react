@@ -7,7 +7,6 @@ const ItemCount = ({stock, inicial, onAdd}) => {
    
 
     const sumar = () => {
-        console.log(stock)
         if (conteo < stock) {
             setConteo(conteo + 1)
         } else {
@@ -17,7 +16,6 @@ const ItemCount = ({stock, inicial, onAdd}) => {
     }
 
     const restar = ()=> {
-        console.log(inicial)
         
         if (conteo === inicial){
             console.log('0 Es el minimo disponible')   

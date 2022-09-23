@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
-const Item = (props) =>{
 
+const Item = (props) =>{
     return(
         <>
-            <h1 key={props.prd.id}> {props.prd.id}  </h1>
+            <h1 key={props.prd.id}> {props.prd.id}</h1>
             <h2>{props.prd.category}</h2>
             <h2>{props.prd.titulo}</h2>
             <h2>{props.prd.descripcion}</h2>

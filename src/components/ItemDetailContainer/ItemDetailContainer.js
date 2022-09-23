@@ -6,9 +6,6 @@ import { useParams } from 'react-router-dom';
 const ItemDetailContainer = () =>{
     const [item, setItem] = useState({})
 
-
-    console.log(useParams());
-
     const idItem = useParams().id;
 
     useEffect(()=> {
@@ -22,8 +19,6 @@ const ItemDetailContainer = () =>{
 
         promesa_product
         .then((resultado) => {
-            console.log('pro')
-            console.log(resultado)
             setItem(resultado)
         })
     }, [])
