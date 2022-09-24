@@ -1,26 +1,40 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
+import { CartContext } from '../../context/CartContext';
 import { useState } from "react";
+import { db } from '../../firebaseConfig'
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
 
 const Form = () =>{
 
-  const  [nombre,setNombre] = useState ('')
-  const  [apellido,setApellido] = useState ('')
+  const  [nombre, setNombre] = useState ('')
+  const  [phone, setPhone] = useState ('')
+  const  [email, setEmail] = useState ('')
+  const {cart, totalPrice} = useContext(CartContext)
 
     const handledSubmit = (event) => { 
         event.preventDefault();
-        //console.log(event.target.elements.nombre.value)
-        //console.log(event.target.elements.apellido.value)
-        
+        const order = {
+            buyer: {nombre: nombre, phone: phone, email: email},
+            items: cart,
+            date: serverTimestamp(),
+            total: totalPrice(),
+        }
 
-            
+        const orderCollection = collection(db, 'orders')
+        addDoc(collection(db, 'orders'), order)
     }
 
         const handleChangeNombre = (event) =>{
             setNombre(event.target.value)
 
         }
-        const handleChangeApellido = (event) =>{
-            setApellido(event.target.value)
+        const handleChangePhone = (event) =>{
+            setPhone(event.target.value)
+
+        }
+
+        const handleChangeEmail = (event) =>{
+            setEmail(event.target.value)
 
         }
 
@@ -44,13 +58,18 @@ const Form = () =>{
             onChange={handleChangeNombre}/>
 
             <input type= "text"
-             placeholder="apellido..." 
-            name="apellido"
-             value={apellido} 
-            onChange={handleChangeApellido}/>
+             placeholder="phone..." 
+            name="phone"
+            value={phone} 
+            onChange={handleChangePhone}/>
 
-            <input type='number' id= 'edad' placeholder="Edad" />
-            <button>Enviar</button>
+            <input type= "text"
+             placeholder="email..." 
+            name="email"
+            value={email} 
+            onChange={handleChangeEmail}/>
+
+            <button type='submit'>Enviar</button>
 
         </form>
 
