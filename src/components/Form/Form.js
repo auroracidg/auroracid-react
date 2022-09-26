@@ -4,12 +4,12 @@ import { useState } from "react";
 import { db } from '../../firebaseConfig'
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
 
-const Form = () =>{
+const Form = ({handlerId}) =>{
 
   const  [nombre, setNombre] = useState ('')
   const  [phone, setPhone] = useState ('')
   const  [email, setEmail] = useState ('')
-  const {cart, totalPrice} = useContext(CartContext)
+  const {cart, totalPrice, clearCart} = useContext(CartContext)
 
     const handledSubmit = (event) => { 
         event.preventDefault();
@@ -21,7 +21,10 @@ const Form = () =>{
         }
 
         const orderCollection = collection(db, 'orders')
-        addDoc(collection(db, 'orders'), order)
+        addDoc(collection(db, 'orders'), order).then((res) => {
+            handlerId(res.id)
+            clearCart()
+        })
     }
 
         const handleChangeNombre = (event) =>{

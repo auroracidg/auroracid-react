@@ -3,9 +3,18 @@ import Form from "../Form/Form"
 import { useContext } from "react";
 import { CartContext } from '../../context/CartContext';
 import { Link } from "react-router-dom"
+import { useState } from "react";
 
 const Cart = () =>{
     const { cart, clearCart, deleteOne, totalPrice, totalPriceSingleProduct } = useContext(CartContext)
+    const [idCompra, setIdCompra] = useState('')
+
+    const handlerId = (id) => {
+        setIdCompra(id)
+    }
+    if(idCompra){
+        return <h1>Gracias por comprar, el id de tu compra es "{idCompra}"</h1>
+    }
 
     return(
         <div className="container">
@@ -16,7 +25,7 @@ const Cart = () =>{
                 </>
             ) : (
                 <>
-                    <Form/>
+                    <Form handlerId={handlerId}/>
                     <button className='btn-carrito' onClick={ clearCart }>Limpiar carrito</button>
 
                     {cart.map((prod) => (
