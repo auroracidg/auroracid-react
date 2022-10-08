@@ -9,15 +9,21 @@ const NavBar = () =>{
 
     
  return(
-    <nav>
-        <h1 className="titulo">Bienvenidos a Dolce Vita</h1>
-
-        
-
-            <Link to='/'>
-                <img   alt="hola" src="https://uvn-brightspot.s3.amazonaws.com/assets/vixes/imj/hogartotal/M/Mascotas-en-casa-cual-elegir-segun-el-espacio-1.jpg" width="150" height="150"/>
+    <>
+    
+    <nav class="navbar bg-light">
+        <div class="container-fluid">
+            <Link to='/' className="navbar-brand">
+                
+                <img src="https://e7.pngegg.com/pngimages/652/729/png-clipart-clinica-veterinaria-las-lagunas-veterinarian-veterinary-medicine-logo-invent-blue-city.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" />
+                Dolce Vita
+                
             </Link>
-
+            
+        </div>
+    </nav>
+    <nav>
+        
                 <ul className="navbar">
                     
                     <Link to="/category/ropa">Accesorios</Link>   
@@ -31,6 +37,7 @@ const NavBar = () =>{
 
                 
             </nav>
+    </>
  )
 
 }

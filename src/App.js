@@ -27,6 +27,7 @@ const App = () => {
   return(
     <CartProvider>
       <BrowserRouter>
+        <div className='container'>
         <Navbar/>
         <Routes>
               <Route 
@@ -56,6 +57,7 @@ const App = () => {
               path='/cart'
               element={<Cart/>} />
         </Routes>
+        </div>
       </BrowserRouter>
     </CartProvider>
   )

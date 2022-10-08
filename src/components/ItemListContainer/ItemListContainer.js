@@ -29,7 +29,6 @@ const ItemListContainer = (props) =>{
 
     return(
         <>
-            <h1 className="saludo">SAlUDOS {props.prueba}</h1>
             <ItemList listaProductos={listaProductos}/>
         </>
     )

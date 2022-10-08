@@ -26,7 +26,7 @@ const Cart = () =>{
             ) : (
                 <>
                     <Form handlerId={handlerId}/>
-                    <button className='btn-carrito' onClick={ clearCart }>Limpiar carrito</button>
+                    <button className='btn-carrito btn btn-primary mt-5' onClick={ clearCart }>Limpiar carrito</button>
 
                     {cart.map((prod) => (
                         <div key={prod.id} className='d-flex alert alert-secondary mt-2 justify-content-between'>
@@ -34,10 +34,10 @@ const Cart = () =>{
                             <p>x{prod.cantidad}</p>
                             <p>Precio c/u: {prod.price}</p>
                             <p>Precio total: {totalPriceSingleProduct(prod.id)}</p>
-                            <button className='btn-carrito' onClick={ () => deleteOne(prod.id) }>Eliminar</button>
+                            <button className='btn-carrito btn btn-danger' onClick={ () => deleteOne(prod.id) }>Eliminar</button>
                         </div> 
                     ))}
-                    <p>Total a pagar: {totalPrice()}</p>
+                    <h4>Total a pagar: <strong>${totalPrice()}</strong></h4>
                 </>
             )}
             

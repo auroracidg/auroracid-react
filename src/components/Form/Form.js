@@ -54,25 +54,33 @@ const Form = ({handlerId}) =>{
         <div className="form">
         <form action="" onSubmit={handledSubmit}>
             <input 
+            className="margin-r"
             type= "text" 
             placeholder="nombre..." 
             name="nombre" 
             value={nombre} 
-            onChange={handleChangeNombre}/>
+            onChange={handleChangeNombre}
+            required/>
 
-            <input type= "text"
+            <input 
+            className="margin-r"
+            type= "text"
              placeholder="phone..." 
             name="phone"
             value={phone} 
-            onChange={handleChangePhone}/>
+            onChange={handleChangePhone}
+            required/>
 
-            <input type= "text"
+            <input 
+            className="margin-r"
+            type= "text"
              placeholder="email..." 
             name="email"
             value={email} 
-            onChange={handleChangeEmail}/>
+            onChange={handleChangeEmail}
+            required/>
 
-            <button type='submit'>Enviar</button>
+            <button type='submit' className="btn btn-primary">Realizar compra</button>
 
         </form>
 

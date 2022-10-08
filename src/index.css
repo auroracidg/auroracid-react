@@ -40,8 +40,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: blue;
+}
 
+.margin-r{
+  margin: 10px;
 }
 
 
